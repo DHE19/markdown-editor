@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+body{
+
+  background: url('https://images.unsplash.com/photo-1539511977266-f0b884a7ee39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80') no-repeat center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #1e284e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none;
+  color: rgb(0, 66, 181);
+  font-weight: 600;
+  font-style: italic;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  min-height: 98vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img{width: 40%; border-radius: 15px;}
+.preview-container{
+  width: 50vw;
+  border-radius: 10px;
+  margin: 13px;
+}
+#preview{
+  margin: 2px 12px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 93vh;
+}
+#editor{
+  resize: none;
+  background: transparent;
+  border: none;
+  color: #190829;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#editor:focus{
+  outline: none;
+}
+.editor-container{
+  border-radius: 10px;
+  margin: 13px;
+  height: 100%;
+  overflow: hidden;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.tab {
+  height: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.tab::before{
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color:#E94560;
+  z-index: 10;
+  left: 30px;
+  top: 3.5px;
+  position: absolute;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tab::after{
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color:#533483;
+  z-index: 10;
+  left: 10px;
+  top: 3.5px;
+  position: absolute;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.blur{
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 0, 0.37);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.18);  
+}
+
+@media (max-width:769px) {
+    .App{
+      flex-direction: column;
+    }
+
+    .preview-container{
+      width: 93vw;
+    }
 }
